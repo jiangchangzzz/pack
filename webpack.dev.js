@@ -14,12 +14,7 @@ module.exports = merge(common, {
         loaders: [
           'style-loader',
           'css-loader',
-          {
-            loader: 'postcss-loader',
-            options: {
-              plugins: () => [require('autoprefixer')]
-            }
-          }
+          'postcss-loader'
         ]
       },
       {
@@ -27,12 +22,7 @@ module.exports = merge(common, {
         loaders: [
           'style-loader',
           'css-loader',
-          {
-            loader: 'postcss-loader',
-            options: {
-              plugins: () => [require('autoprefixer')]
-            }
-          },
+          'postcss-loader',
           'sass-loader'
         ]
       }

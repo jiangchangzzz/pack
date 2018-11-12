@@ -8,7 +8,8 @@ module.exports = {
   },
 
   output: {
-    filename: 'js/[name].bundle.[hash].js',
+    filename: 'js/[name].[hash].js',
+    chunkFilename: 'js/[name].[chunkhash].js',
     path: path.resolve(__dirname, 'dist')
   },
 
@@ -53,20 +54,7 @@ module.exports = {
 
   optimization: {
     splitChunks: {
-      cacheGroups: {
-        common: {
-          name: 'common',
-          chunks: 'initial',
-          minChunks: 2,
-          priority: 0
-        },
-        vendor: { 
-          test: /[\\/]node_modules[\\/]/,
-          name: 'vendor',
-          chunks: 'all',
-          priority: 10 
-        }
-      }
+      chunks: 'all'
     }
   }
 }

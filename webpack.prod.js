@@ -16,12 +16,7 @@ module.exports = merge(common, {
         loaders: [
           MiniCssExtractPlugin.loader,
           'css-loader',
-          {
-            loader: 'postcss-loader',
-            options: {
-              plugins: () => [require('autoprefixer')]
-            }
-          }
+          'postcss-loader'
         ]
       },
       {
@@ -29,12 +24,7 @@ module.exports = merge(common, {
         loaders: [
           MiniCssExtractPlugin.loader,
           'css-loader',
-          {
-            loader: 'postcss-loader',
-            options: {
-              plugins: () => [require('autoprefixer')]
-            }
-          },
+          'postcss-loader',
           'sass-loader'
         ]
       }
@@ -44,7 +34,7 @@ module.exports = merge(common, {
   plugins: [
     new MiniCssExtractPlugin({
       filename: 'css/[name].[hash].css',
-      chunkFilename: 'css/[name].[id].[hash].css'
+      chunkFilename: 'css/[name].[id].[chunkhash].css'
     })
   ],
 
