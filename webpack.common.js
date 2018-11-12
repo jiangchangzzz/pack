@@ -32,7 +32,7 @@ module.exports = {
             loader: 'url-loader',
             options: {
               limit: 8192,
-              name: 'images/[name].[hash].[ext]'
+              name: 'assets/[name].[hash].[ext]'
             }
           }
         ]
@@ -46,10 +46,5 @@ module.exports = {
       template: './src/index.html',
       filename: 'index.html'
     })
-  ],
-
-  devServer: {
-    contentBase: path.resolve(__dirname, 'dist'),
-    historyApiFallback: true
-  }
+  ]
 }
